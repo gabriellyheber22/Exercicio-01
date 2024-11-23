@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!--Crie um botão que ao ser clicado cria um novo elemento em tela com a forma de um criaQuadrado
+vermelho com 100px de altura e largura. Sempre que o botão for clicado um novo criaQuadrado deve
+aparecer na tela.-->
+<div id="App">
+    <button id="btn">Cria Quadrado</button>
+
+</div>
+<script>
+    let botão = document.getElementById('btn');
+    let box = document.createElement('div');
+    let app = document.getElementById('App')
+    box.setAttribute('id', 'armazemDeQuadrados');
+    app.appendChild(box);
+    botão.onclick = function(){
+        let criaQuadrado = document.createElement('div');
+   
+    criaQuadrado.style.width = '100px';
+    criaQuadrado.style.height = '100px';
+    criaQuadrado.style.backgroundColor= 'red';
+    criaQuadrado.style.margin = '3px'
+    
+    box.appendChild(criaQuadrado);
+
+    }
+    //boxElement.appendChild(criaQuadrado)
+</script>
+</body>
+</html>
