@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var usuarios = [
+            {
+                nome: "Diego",
+                habilidades: ["Javascript", "ReactJS", "Redux"]
+            },
+            {
+                nome: "Gabriel",
+                habilidades: ["VueJS", "Ruby on Rails", "Elixir"]
+            }
+        ];
+
+        //const elements = ['Fire', 'Air', 'Water'];
+        //console.log(elements.join());
+
+        function saida(usuarios) {
+            let objetos = [];
+            for (let valor of usuarios) {
+                objetos.push(' O ' + valor.nome + ' possui as habilidade: ' + valor.habilidades+'\n') ;
+                
+            }
+            console.log(objetos.join(''))
+        }
+        console.log(saida(usuarios));
+
+    </script>
+</body>
+
+</html>
