@@ -1,2 +1,2 @@
-# Exercicio-01
+# Exercicio em JavaScript
  Exercicio do curso de JavaScript 
