@@ -8,18 +8,37 @@
 </head>
 
 <body>
+    <input type="text" name="nome" id="nome">
+    <button onClick="adicionar()">Adicionar</button>
     <script>
-        var nomes = ["Diego", "Gabriel", "Lucas"];
+        var nomes = ["Diego", "Pedro", "Lucas"];
         let corpo = document.body;
         let lista = document.createElement('ul');
         corpo.appendChild(lista);
         
 
-        for (let i = 0; i < nomes.length; i++) {
+function adicionar(){
+    
+    lista.innerText =''; //Limpa a lista antes de adicionar o novo item, para que os itens que já estão na lista não fiquem repetidos
+    if(document.getElementById('nome').value == ''){//Valida se o campo foi preenchido
+        document.getElementById('nome').focus();
+        alert('Preencha o campo');
+
+    }else{
+        let Nome = document.getElementById('nome').value;
+    nomes.push(Nome);
+    for (let i = 0; i < nomes.length; i++) {
             let itens = document.createElement('li');
             itens.innerText = nomes[i];
             lista.appendChild(itens);
         }
+        document.getElementById('nome').value = '';  
+    }
+    
+
+}
+
+     
     </script>
 </body>
 
