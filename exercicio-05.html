@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="Principal">
+        <button id="btn">Cria Quadrado</button>
+
+    </div>
+    <script>
+        let botão = document.getElementById('btn');
+        let principal = document.getElementById('Principal');
+        let box = document.createElement('div');
+        box.setAttribute('id', 'armazemDeQuadrados');
+        principal.appendChild(box);
+        let criaQuadrado;
+
+
+        //Função para mudar a cor do quadrado
+        function mudaCor(quadrado) {
+            quadrado.style.backgroundColor = getRandomColor();
+        }
+        //Função Cria quadrado
+        botão.onclick = function () {
+            criaQuadrado = document.createElement('div');
+            criaQuadrado.setAttribute('class', 'quadrado');
+            criaQuadrado.style.width = '100px';
+            criaQuadrado.style.height = '100px';
+            criaQuadrado.style.backgroundColor = 'red';
+            criaQuadrado.style.margin = '3px';
+            box.appendChild(criaQuadrado);
+            //Função que verifica se o mouse passou em cima do quadrado e chama a função mudaCor
+            criaQuadrado.onmouseover = function () {
+                mudaCor(criaQuadrado);
+            }
+
+
+        }
+        //Função para criar cores
+        function getRandomColor() {
+            var letters = "0123456789ABCDEF";
+            var color = "#";
+            for (var i = 0; i < 6; i++) {
+                color += letters[Math.floor(Math.random() * 16)];
+            }
+            return color;
+        }
+        var newColor = getRandomColor();
+
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>
