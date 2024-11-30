@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let promise = new Promise(function(resolve, request){
+            function checaIdade(idade){
+                
+                if(idade> 18){
+                     resolve("Maior que 18");
+                }else{
+                   reject("Menor que 18");
+                }    
+        }
+        checaIdade(16)
+    });
+     
+        promise
+        
+            .then(function () {
+                console.log("Maior que 18");
+            })
+            .catch(function () {
+                console.log("Menor que 18");
+            });
+    </script>
+</body>
+
+</html>
