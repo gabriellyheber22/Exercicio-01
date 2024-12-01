@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="App">
+        <input type="text" name="user" id="user">
+        <button onclick="repos()">Adicionar</button>
+        <ul>
+
+        </ul>
+    </div>
+    <script src="https://unpkg.com/axios@1.6.7/dist/axios.min.js"></script>
+    <script>
+
+        function repos() {
+            let usuario = document.getElementById('user').value;
+            axios.get('https://api.github.com/users/' + usuario + '/repos')
+                .then(function (response) {
+                    //O forEach() percorre cada item do array e executa a função fornecida para cada elemento. Nesse caso, 'repositorio' é o item atual da iteração
+                    response.data.forEach((repositorio) => {
+                        console.log('Nome do repositório:', repositorio.name);
+                    });
+                })
+                .catch(function (error) {
+                    console.warn(error);
+                })
+        }
+
+
+    </script>
+</body>
+
+</html>
